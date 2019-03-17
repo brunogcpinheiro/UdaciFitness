@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
-import { getMetricMetaInfo, timeToString } from '../utils/helpers';
-import UdaciSlider from './UdaciSlider';
-import UdaciSteppers from './UdaciSteppers';
-import DateHeader from './DateHeader';
-import { Ionicons } from '@expo/vector-icons';
-import TextButton from './TextButton';
+import React, { Component } from "react";
+import { View, TouchableOpacity, Text } from "react-native";
+import { getMetricMetaInfo, timeToString } from "../utils/helpers";
+import UdaciSlider from "./UdaciSlider";
+import UdaciSteppers from "./UdaciSteppers";
+import DateHeader from "./DateHeader";
+import { Ionicons } from "@expo/vector-icons";
+import TextButton from "./TextButton";
+import { submitEntry, removeEntry } from "../utils/api";
 
 function SubmitBtn ({ onPress }) {
 	return (
@@ -67,10 +68,13 @@ export default class AddEntry extends Component {
 			sleep: 0,
 			eat: 0,
 		}));
+
+		submitEntry({ key, entry });
 	};
 
 	reset = () => {
 		const key = timeToString();
+		removeEntry(key);
 	};
 
 	render () {
@@ -96,7 +100,7 @@ export default class AddEntry extends Component {
 					return (
 						<View key={key}>
 							{getIcon()}
-							{type === 'slider' ? (
+							{type === "slider" ? (
 								<UdaciSlider
 									value={value}
 									onChange={value => this.slide(key, value)}

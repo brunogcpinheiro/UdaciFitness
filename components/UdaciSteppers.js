@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { FontAwesome, Entypo } from '@expo/vector-icons';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { FontAwesome, Entypo } from "@expo/vector-icons";
 
 export default function UdaciSteppers ({
 	max,
