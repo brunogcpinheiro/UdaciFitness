@@ -69,7 +69,7 @@ export function getMetricMetaInfo (metric) {
 		run: {
 			displayName: "Run",
 			max: 50,
-			unit: "Kilometers",
+			unit: "kilometers",
 			step: 1,
 			type: "steppers",
 			getIcon () {
@@ -138,12 +138,11 @@ export function getMetricMetaInfo (metric) {
 			},
 		},
 	};
-
-	export function getDailyReminderValue () {
-		return {
-			today: "Don't forget to log your data today!",
-		};
-	}
-
 	return typeof metric === "undefined" ? info : info[metric];
+}
+
+export function getDailyReminderValue () {
+	return {
+		today: "Don't forget to log your data today!",
+	};
 }

@@ -18,7 +18,7 @@ export default function UdaciSteppers ({
 	onDecrement,
 }) {
 	return (
-		<View style={[ styles.row, { justifyContent: "center" } ]}>
+		<View style={[ styles.row, { justifyContent: "space-between" } ]}>
 			{Platform.OS === "ios" ? (
 				<View style={{ flexDirection: "row" }}>
 					<TouchableOpacity
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	metricCounter: {
-		width: 85,
+		width: 90,
 		justifyContent: "center",
 		alignItems: "center",
 	},
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 	},
 	androidBtn: {
 		backgroundColor: purple,
-		margin: 5,
+		margin: 2,
 		padding: 10,
 		borderRadius: 2,
 	},
